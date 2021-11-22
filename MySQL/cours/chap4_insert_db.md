@@ -44,7 +44,7 @@ INSERT INTO table (nom_colonne_1, nom_colonne_2, ...
 
 ## Application insertion de données compagnies
 
-Insérez les données suivantes dans la table compagnies :
+Insérez les données suivantes dans la table compagnies, ajoutez le champ numStreet dans la table compagnies. Puis dans un fichier sql préparez la commande SQL permettant de réaliser cette insertion.
 
 ```text
 +------+-----------+-----------+--------------+-----------+--------+
