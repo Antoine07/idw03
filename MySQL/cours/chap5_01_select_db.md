@@ -90,33 +90,33 @@ start : offset,  length le nombre d'éléments du tableau.
 
 ## 01 Exercices
 
-- Sélectionnez tous les pilotes de la compagnie AUS
+- 01 Sélectionnez tous les pilotes de la compagnie AUS
 
-- Sélectionnez les noms des pilotes de la compagnie FRE1 ayant fait plus de 15 heures de vols.
+- 02 Sélectionnez les noms des pilotes de la compagnie FRE1 ayant fait plus de 15 heures de vols.
 
-- Sélectionnez les noms des pilotes de la compagnie FRE1 ayant fait plus de 20 heures de vols.
+- 03 Sélectionnez les noms des pilotes de la compagnie FRE1 ayant fait plus de 20 heures de vols.
 
-- Sélectionnez les noms des pilotes de la compagnie FRE1 ou AUST ayant fait plus de 20 de vols.
+- 04 Sélectionnez les noms des pilotes de la compagnie FRE1 ou AUST ayant fait plus de 20 de vols.
 
-- Sélectionnez les noms des pilotes ayant fait entre 190 et 200 heures de vols.
+- 05 Sélectionnez les noms des pilotes ayant fait entre 190 et 200 heures de vols.
 
-- Sélectionnez les noms des pilotes qui sont nés après 1978.
+- 06 Sélectionnez les noms des pilotes qui sont nés après 1978.
 
-- Sélectionnez les noms des pilotes qui sont nés avant 1978.
+- 07 Sélectionnez les noms des pilotes qui sont nés avant 1978.
 
-- Sélectionnez les noms des pilotes qui sont nés entre 1978 et 2000.
+- 08 Sélectionnez les noms des pilotes qui sont nés entre 1978 et 2000.
 
-- Quels sont les pilotes qui ont un vol programmé après 2020-05-08 ?
+- 09 Quels sont les pilotes qui ont un vol programmé après 2020-05-08 ?
 
-- Sélectionnez tous les noms des pilotes qui sont dans les compagnies : AUS et FRE1.
+- 10 Sélectionnez tous les noms des pilotes qui sont dans les compagnies : AUS et FRE1.
 
-- Sélectionnez tous les des pilotes dont le nom de compagnie contient un A.
+- 11 Sélectionnez tous les des pilotes dont le nom de compagnie contient un A.
 
-- Sélectionnez tous les pilotes dont le nom de la compagnie commence par un F.
+- 12 Sélectionnez tous les pilotes dont le nom de la compagnie commence par un F.
 
-- Sélectionnez tous les pilotes dont le nom de la compagnie contient un I suivi d'un caractère.
+- 13 Sélectionnez tous les pilotes dont le nom de la compagnie contient un I suivi d'un caractère.
 
-- Que fait la commande suivante ? Ecrivez la question qui correspond à la réponse SQL ci-dessous :
+- 14 Que fait la commande suivante ? Ecrivez la question qui correspond à la réponse SQL ci-dessous :
 
 ```sql
 SELECT 
