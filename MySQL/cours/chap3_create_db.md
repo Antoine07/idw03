@@ -169,7 +169,7 @@ mysql>describe compagnies;
 
 ## Exercice modifier
 
-Modifiez la table compagny ci-dessus et ajoutez le champ status de type ENUM qui prendra les valeurs suivantes : "published", "unpublished", "draft" et qui par défaut aura la valeur "draft".
+Modifiez la table compagnies ci-dessus et ajoutez le champ status de type ENUM qui prendra les valeurs suivantes : "published", "unpublished", "draft" et qui par défaut aura la valeur "draft". (mot clé DEFAULT en MySQL).
 
 Ajoutez également la colonne numStreet.
 
