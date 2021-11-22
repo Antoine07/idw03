@@ -116,6 +116,15 @@ start : offset,  length le nombre d'éléments du tableau.
 
 - Sélectionnez tous les pilotes dont le nom de la compagnie contient un I suivi d'un caractère.
 
+- Que fait la commande suivante ? Ecrivez la question qui correspond à la réponse SQL ci-dessous :
+
+```sql
+SELECT 
+ROUND(num_jobs / (SELECT SUM(num_jobs) from pilots), 2 )*100 as per_job 
+FROM pilots 
+WHERE num_jobs IS NOT NULL;
+```
+
 ## Exercice ajout d'un bonus
 
 Ajoutez une colonne **bonus** à la table pilots, puis ajoutez le bonus 1000 pour les certificats 'ct-1', 'ct-11', 'ct-12', pour le certificat ct-56 un bonus de 2000 et pour tous les autres 500.
