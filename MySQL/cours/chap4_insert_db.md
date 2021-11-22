@@ -161,8 +161,6 @@ SET `birth_date` = '1977-01-04 00:00:00',
  WHERE name = 'Pierre';
 ```
 
-\newpage
-
 ```text
 +--------+----------+--------------------------------------------------------+
 | name   | num_jobs | next_flight                | birth_date                |

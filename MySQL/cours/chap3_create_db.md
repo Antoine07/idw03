@@ -24,8 +24,6 @@ La clé primaire (Primary Key) d'une table est l'ensemble minimal de colonnes qu
 
 ![table pk](images/pk.png)
 
-\newpage
-
 ### Type de la clé primaire
 
 Une clé primaire est : NOT NULL, UNIQUE et c'est un INDEX.
@@ -39,8 +37,6 @@ La clé étrangère (Foreign Key), elle référence dans la majorité des cas un
 ![table pk](images/relation_fk_pk.png)
 
 Notons qu'une clé étrangère lorsqu'elle se référence sur une clé primaire d'une autre table possède **EXACTEMENT** le type de la clé primaire référencée.
-
-\newpage
 
 ## Base de données
 
