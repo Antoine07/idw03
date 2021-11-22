@@ -38,15 +38,13 @@ INSERT INTO table (nom_colonne_1, nom_colonne_2, ...
  VALUES
  ('valeur 1', 'valeur 2', ...),
  ('valeur 11', 'valeur 22', ...),
- ('valeur 111', 'valeur 222', ...),
+ ('valeur 111', 'valeur 222', ...);
 ```
 
 
-\newpage
-
 ## Application insertion de données compagnies
 
-Insérez les données suivantes dans la table compagnies :
+Insérez les données suivantes dans la table compagnies, ajoutez le champ numStreet dans la table compagnies. Puis dans un fichier sql préparez la commande SQL permettant de réaliser cette insertion.
 
 ```text
 +------+-----------+-----------+--------------+-----------+--------+
