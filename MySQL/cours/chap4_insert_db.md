@@ -38,11 +38,9 @@ INSERT INTO table (nom_colonne_1, nom_colonne_2, ...
  VALUES
  ('valeur 1', 'valeur 2', ...),
  ('valeur 11', 'valeur 22', ...),
- ('valeur 111', 'valeur 222', ...),
+ ('valeur 111', 'valeur 222', ...);
 ```
 
-
-\newpage
 
 ## Application insertion de données compagnies
 
