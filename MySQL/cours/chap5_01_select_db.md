@@ -137,6 +137,6 @@ Faites une requête permettant de sélectionner le pilote ayant eu le meilleur b
 
 Combien y-a-t-il d'heure de vols distincts dans la table pilotes ?
 
-## Exercice heure de vols moyen
+## 05 Exercice heure de vols moyen
 
 Combien de pilotes sont en dessous de la moyenne d'heure de vols ?
