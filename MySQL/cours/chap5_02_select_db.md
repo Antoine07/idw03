@@ -13,7 +13,7 @@ WHERE colonne(s) IN (
 )
 ```
 
-## Exercice adresse des compagnies et heures de vols
+## 01 Exercice adresse des compagnies et heures de vols
 
 Quelles sont les coordonnées des compagnies qui employe(nt) des pilotes faisant moins de 90 heures de vols ?
 
@@ -21,7 +21,7 @@ Quelles sont les coordonnées des compagnies qui employe(nt) des pilotes faisant
 
 Faites la somme des heures de vols des pilotes de la compagnie d'Air France.
 
-## Exercice compagnie(s) sans pilote
+## 02 Exercice compagnie(s) sans pilote
 
 Ajoutez maintenant la compagnie suivante dans la table compagnies :
 
@@ -35,7 +35,11 @@ Cette commande s’utilise dans une clause conditionnelle entre l’opérateur d
 
 Cette clause s'utilise dans une sous-requête de manière identique à la clause IN. Elle permet de comparer une valeur dans l'ensemble de valeurs d'une sous-requête.
 
-## Exercice nombre inférieur d'heure de vols
+## Clause ANY
+
+La condition est vraie si elle est vérifiée pour au moins une des valeurs renvoyées par la sous-requête.
+
+## 03 Exercice nombre inférieur d'heure de vols
 
 Ajoutez la colonne plane à la table pilots :
 
@@ -59,3 +63,7 @@ WHERE name in ('Yan', 'Yi');
 ```
 
 Sélectionnez toutes les compagnies dont le nombre d'heures de vol est inférieur à tous les nombres d'heures de vol (chaque heure de vol) des A380.
+
+## 04 Exercice nombre de compagnies
+
+Nombre de compagnie(s) dont le nombre d'heures de vol est de moins de 200 heures.
