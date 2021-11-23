@@ -18,9 +18,9 @@ STDDEV(exp)                       écart type
 ```sql
 SELECT col1 [,col2, ...], fonction_groupe
 FROM table
-WHERE (condition)
+WHERE (condition).  # s'applique à toutes les lignes
 GROUP BY clo1 [, col2, ...]
-HAVING condition
+HAVING condition # s'applique au groupement
 ORDER BY col1 [ASC | DESC] [, col2 ...]
 ```
 SELECT col1 [,col2, ...], fonction_groupe
