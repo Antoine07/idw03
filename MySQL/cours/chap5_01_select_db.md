@@ -125,18 +125,18 @@ FROM pilots
 WHERE num_jobs IS NOT NULL;
 ```
 
-## Exercice ajout d'un bonus
+## 02 Exercice ajout d'un bonus
 
 Ajoutez une colonne **bonus** à la table pilots, puis ajoutez le bonus 1000 pour les certificats 'ct-1', 'ct-11', 'ct-12', pour le certificat ct-56 un bonus de 2000 et pour tous les autres 500.
 
-## Exercice meilleur bonus
+## 03 Exercice meilleur bonus
 
 Faites une requête permettant de sélectionner le pilote ayant eu le meilleur bonus. Vous pouvez utiliser la fonction max de MySQL.
 
-## Exercice heure de vols
+## 04 Exercice heure de vols
 
 Combien y-a-t-il d'heure de vols distincts dans la table pilotes ?
 
-## Exercice heure de vols moyen
+## 05 Exercice heure de vols moyen
 
 Combien de pilotes sont en dessous de la moyenne d'heure de vols ?
