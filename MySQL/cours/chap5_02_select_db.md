@@ -33,11 +33,20 @@ Trouvez toute(s) les/la compagnie(s) n'ayant pas de pilotes.
 
 Cette clause s'utilise dans une sous-requête de manière identique à la clause IN. Elle permet de comparer une valeur dans l'ensemble de valeurs d'une sous-requête. Elle permet de s'assurer qu'une condition est =, >, <, >=, <= pour toutes les valeurs de la sous-requêtes.
 
-
+```sql
+-- On cherche les commandes dont le prix de la commande est supérieur à tous les prix des produits qui ont le code 123.
+SELECT *
+FROM commands
+WHERE price > ALL (
+  SELECT price
+  FROM products
+  WHERE code='123'
+)
+```
 
 ## Clause ANY
 
-La condition est vraie si elle est vérifiée pour au moins une des valeurs renvoyées par la sous-requête.
+La condition est vraie si elle est vérifiée pour au moins une des valeurs renvoyées par la sous-requête. C'est le contraire de la clause ALL
 
 ## 04 Exercice nombre inférieur d'heure de vols
 
@@ -63,7 +72,3 @@ WHERE name in ('Yan', 'Yi');
 ```
 
 Sélectionnez toutes les compagnies dont le nombre d'heures de vol est inférieur à tous les nombres d'heures de vol (chaque heure de vol) des A380.
-
-## 05 Exercice nombre de compagnies
-
-Nombre de compagnie(s) dont le nombre d'heures de vol est de moins de 200 heures.
