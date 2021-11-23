@@ -29,3 +29,17 @@ WHERE comp NOT IN (
     SELECT compagny
     FROM pilots
 );
+
+-- 04 Exercice Sélectionnez toutes les compagnies dont le nombre d'heures de vol est inférieur à tous les nombres d'heures de vol (chaque heure de vol) des A380.
+
+SELECT numStreet, street, city
+FROM compagnies
+WHERE comp IN(
+    SELECT compagny 
+    FROM pilots
+    WHERE numFlying < ALL(
+        SELECT numFlying
+        FROM pilots
+        WHERE plane = 'A380'
+    )
+);
