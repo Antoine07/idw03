@@ -25,7 +25,7 @@ ORDER BY col1 [ASC | DESC] [, col2 ...]
 ```
 SELECT col1 [,col2, ...], fonction_groupe
 
-- La clause WHERE exclue des lignes pour chaque groupement ou permet de rejetr des groupements entiers. Elle s'applique à la totalité de la table.
+- La clause WHERE exclue des lignes pour chaque groupement ou permet de rejeter des groupements entiers. Elle s'applique à la totalité de la table.
 
 - La clause GROUP BY liste des colonnes de groupement.
 
