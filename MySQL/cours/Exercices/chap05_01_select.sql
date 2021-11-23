@@ -124,3 +124,39 @@ FROM pilots
 WHERE num_jobs IS NOT NULL;
 
 -- Cette requête correspond au pourcentage du nombre de job pour les pilotes.
+
+/*
+02 Exercice 
+Ajoutez une colonne bonus à la table pilots, puis ajoutez le bonus 1000 pour les certificats 'ct-1', 'ct-11', 'ct-12', pour le certificat ct-56 un bonus de 2000 et pour tous les autres 500.
+*/
+
+ALTER TABLE pilots
+ADD bonus DECIMAL(5,1) AFTER name;
+
+UPDATE pilots
+SET bonus = 
+(CASE 
+    WHEN certificate IN ('ct-1', 'ct-11', 'ct-12') THEN 1000.0
+    WHEN certificate IN ('ct-56') THEN 2000.0
+    ELSE 500.0
+END);
+
+/*
+03 Exercice 
+Faites une requête permettant de sélectionner le pilote ayant eu le meilleur bonus. Vous pouvez utiliser la fonction max de MySQL.
+*/
+
+SELECT `name`
+FROM pilots
+WHERE bonus = (SELECT MAX(bonus) FROM pilots);
+
+--  04 Exercice  Combien y-a-t-il d'heure de vols distincts dans la table pilotes ?
+SELECT COUNT( DISTINCT numFlying ) as nb_numFlying
+FROM pilots;
+
+-- 05 Exercice Combien de pilotes sont en dessous de la moyenne d'heure de vols ?
+
+-- moyenne des heures de vol
+SELECT `name`
+FROM pilots
+WHERE numFlying < (SELECT AVG(numFlying) FROM pilots);
