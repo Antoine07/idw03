@@ -3,7 +3,7 @@
 ## Fonctions de groupe
 
 Elles s'utilisent dans la clause SELECT sur une/des colonnes, elles permettent de regrouper des données. Si vous utilisez les fonctions de groupement avec une requête ne contenant pas de clause GROUP BY, cela revient à grouper toutes les lignes.
-
+```text
 AVG([DISTINCT] exp)              moyenne
 COUNT({*| DISTINCT] expr})       nombre de lignes
 MAX([DISTINCT] exp)              max
@@ -12,17 +12,20 @@ SUM([DISTINCT] exp)              somme
 GROUP_CONCAT(exp)                composition d'un nombre de valeurs, concaténation de valeurs de champ a, b, c, d
 VARIANCE(exp)                    variance
 STDDEV(exp)                       écart type
-
+```
 ## Groupement de lignes
 
+```sql
 SELECT col1 [,col2, ...], fonction_groupe
 FROM table
-WHERE (condition)
-**GROUP BY clo1 [, col2, ...]**
-HAVING condition
+WHERE (condition).  # s'applique à toutes les lignes
+GROUP BY clo1 [, col2, ...]
+HAVING condition # s'applique au groupement
 ORDER BY col1 [ASC | DESC] [, col2 ...]
+```
+SELECT col1 [,col2, ...], fonction_groupe
 
-- La clause WHERE exclue des lignes pour chaque groupement ou permet de rejetr des groupements entiers. Elle s'applique à la totalité de la table.
+- La clause WHERE exclue des lignes pour chaque groupement ou permet de rejeter des groupements entiers. Elle s'applique à la totalité de la table.
 
 - La clause GROUP BY liste des colonnes de groupement.
 
