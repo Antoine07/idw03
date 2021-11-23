@@ -31,9 +31,9 @@ Trouvez toute(s) les/la compagnie(s) n'ayant pas de pilotes.
 
 ## Clause ALL
 
-Cette commande s’utilise dans une clause conditionnelle entre l’opérateur de condition et la sous-requête. L’exemple ci-dessous montre un exemple basique :
+Cette clause s'utilise dans une sous-requête de manière identique à la clause IN. Elle permet de comparer une valeur dans l'ensemble de valeurs d'une sous-requête. Elle permet de s'assurer qu'une condition est =, >, <, >=, <= pour toutes les valeurs de la sous-requêtes.
 
-Cette clause s'utilise dans une sous-requête de manière identique à la clause IN. Elle permet de comparer une valeur dans l'ensemble de valeurs d'une sous-requête.
+
 
 ## Clause ANY
 
