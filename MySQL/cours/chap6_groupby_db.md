@@ -80,7 +80,7 @@ Calculez l'étendue du nombre d'heure de vol par compagnie.
 
 Indication : l'étendue est la différence entre MAX et le MIN pour chacune des valeurs. On peut évidement faire ce type de calcul dans la partie SELECT d'une requête SQL.
 
-## 08 Exercice moyenne et nombre de jours
+## 08 Exercice nombre de jours
 
 - Faites la somme du nombre de jours de vols par compagnie dont la somme est supérieur à 30.
 
