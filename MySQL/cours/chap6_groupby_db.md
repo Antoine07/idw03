@@ -44,7 +44,7 @@ par compagnie.
 
 Sélectionnez les compagnies et leur nombre de pilote(s), ayant plus d'un pilote.
 
-## Exercice ajout d'une colonne & valeurs
+## 04 Exercice ajout d'une colonne & valeurs
 
 *Si vous n'avez pas fait les exercices supplémentaires. Vous devez faire ce qui suit, sinon passer à la suite.*
 
@@ -59,25 +59,25 @@ Et mettez à jour la table avec les contraintes suivantes :
 
 - 'Yan', 'Yin' sur un A340.
 
-## 04 Exercice sélectionner pilotes & compagnies
+## 05 Exercice sélectionner pilotes & compagnies
 
 Sélectionnez le nombre de pilote(s) par compagnie et par type d'avion.
 
-## 05 Exercice noms de pilotes
+## 06 Exercice noms de pilotes
 
 - Sélectionnez le noms des pilotes par bonus.
 
 - Sélectionnez le noms et la compagnie des pilotes par bonus.
 
-## 06 Exercice étendue
+## 07 Exercice étendue
 
 Calculez l'étendue du nombre d'heure de vol par compagnie.
 
-## 07 Exercice moyenne et nombre de jours
+## 08 Exercice moyenne et nombre de jours
 
 - Faites la somme du nombre de jours de vols par compagnie dont la somme est supérieur à 30.
 
-## 08 Exercice nombre de compagnies (synthèse)
+## 09 Exercice nombre de compagnies (synthèse)
 
 Nombre de compagnie(s) dont le nombre d'heures de vol est de moins de 200 heures.
 
