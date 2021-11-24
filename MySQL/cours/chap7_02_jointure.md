@@ -19,12 +19,10 @@ Dans une jointure interne seules les correspondances entre les deux tables sont 
 SELECT t1.title, t2.title
 FROM A as t1
 INNER JOIN B as t2
-ON t1.k=t2.k;
+ON t1.id=t2.t1_id; -- clé primaire = clé étrangère
 ```
 
 ![jointure interne](images/jointure_interne.png)
-
-\newpage
 
 ## La jointure externe (LEFT OUTER JOIN  ou RIGHT OUTER JOIN)
 
@@ -37,11 +35,16 @@ Attention pas de FULL OUTER dans MySQL qui permet d'ignorer l'ordre entre les ta
 
 ![jointure left](images/jointure_left.png)
 
-\newpage
-
 Jointure droite
 
 ![jointure right](images/jointure_right.png)
+
+```sql
+SELECT *
+FROM A as t1
+LEFT JOIN B as t2
+ON t1.id = t2.t1_id
+```
 
 ## Autres types de jointures
 
