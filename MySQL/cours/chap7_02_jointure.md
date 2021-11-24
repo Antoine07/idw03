@@ -67,3 +67,14 @@ WHERE t2.k IS NULL
 ![jointure exclude right](images/jointure_exclude_r.png)
 
 Notez que l'on peut également exclure A uniquement.
+
+## Exemple de jointure
+
+Le nom des pilotes et le nom de leur compagnie
+
+```sql
+SELECT p.name as name_pilot, c.name as name_compagny
+FROM pilots as p
+INNER JOIN compagnies as c
+ON c.comp = p.compagny; -- la clé primaire est égale à la clé étrangère
+```
