@@ -97,3 +97,21 @@ Supprimez la compagnie AUS, vérifiez que les pilotes de cette compagnie n'ont p
 
 Puis remettez cette référence en place.
 
+Indication faite une sauvegarde de votre base de données au préalable
+
+```bash
+mysqldump -u root -p --databases db_aviation > dump_db_aviation.sql
+
+# pour remettre la base de données 
+mysql -u root -p --databases db_aviation < dump_db_aviation.sql
+```
+
+Vous pouvez utiliser le moteur InnoDB de MySQL qui est en mode transactionnel et utiliser le mode autocommit=0 pour valider l'ensemble de vos requêtes en une fois avec un COMMIT ou revenir en arrière avec ROLLBACK.
+
+```sql
+set autocommit= 0;
+
+-- faire vos requêtes 
+
+-- vérifiez que les commandes SQL INSERT, DELETE ou UPDATE ont bien produit l'effet souhaité. Puis faite un ROLLBACK pour remettre la base de données dans son état précédent. N'oubliez pas de remettre autocommit=1, comportement par défaut du moteur InnoDB.
+```
