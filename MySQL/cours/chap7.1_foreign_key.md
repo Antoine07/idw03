@@ -88,3 +88,8 @@ UPDATE RESTRICT et NO ACTION : empêche la modification si elle casse la contrai
 
 SET NULL : met NULL partout où la valeur modifiée était référencée.
 CASCADE : modifie également la valeur là où elle est référencée.
+
+## 01 Exercice
+
+Modifiez la clé étrangère dans la table pilots afin que celle-ci possède l'option ON DELETE SET NULL.
+
