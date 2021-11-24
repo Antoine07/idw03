@@ -69,6 +69,16 @@ ON DELETE RESTRICT et NO ACTION comportement par défaut, ces deux options on le
 
 ON DELETE SET NULL dans ce cas NULL est substitué aux valeurs dont la référence est supprimée.
 
+```sql 
+ALTER TABLE pilots
+ADD CONSTRAINT `fk_pilots_compagny` 
+FOREIGN KEY (`compagny`) REFERENCES `compagnies` (`comp`)
+ON DELETE SET NULL;
+
+-- la suppression de la compagnie AUS => le champ compagny dans la table pilots aura la valeur NULL pour tous les pilotes de cette compagnie
+DELETE FROM compagnies WHERE comp='AUS'; 
+```
+
 Exemple : si on a ON DELETE SET NULL sur la clef étrangère de la table pilots, et si on supprime une compagnie alors les pilotes qui avaient cette référence (comp de la table compagnies supprimé) ne sont pas supprimés et la valeur NULL est mise à la place de l'identifiant de la table compagnies dans la table pilots.
 
 ON DELETE CASCADE comportement plus risqué, plus voilent ! Elle supprime toutes les lignes. Par exemple si on supprime une compagnie dans la table compagnies reliée à la table pilots (c'est dans cette table que l'on a la clef étrangère) alors tous les pilotes référencés seront également supprimés.
