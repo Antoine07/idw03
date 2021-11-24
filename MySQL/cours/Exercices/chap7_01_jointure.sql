@@ -11,7 +11,6 @@ ADD CONSTRAINT `fk_pilots_compagny_compagnies_comp`
 FOREIGN KEY (`compagny`) REFERENCES `compagnies` (`comp`)
 ON DELETE SET NULL;
 
-
 set autocommit = 0;
 
 -- met NULL dans la table pilots
