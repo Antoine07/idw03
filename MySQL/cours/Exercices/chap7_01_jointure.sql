@@ -11,18 +11,19 @@ ADD CONSTRAINT `fk_pilots_compagny_compagnies_comp`
 FOREIGN KEY (`compagny`) REFERENCES `compagnies` (`comp`)
 ON DELETE SET NULL;
 
--- faire une sauve garde juste de la ligne de la compagnie que l'on va supprimer
 
-CREATE TABLE `new_compagnies` (SELECT * FROM `compagnies` WHERE comp='AUS');
+set autocommit = 0;
 
 -- met NULL dans la table pilots
 DELETE FROM compagnies WHERE comp='AUS';
 
-INSERT INTO
-compagnies (
-    `comp`, `street`, `city`, `name`, `numStreet`, `status`
-) SELECT * FROM `new_compagnies`;
+-- vérifiez que les tables ont été mis à jour
 
-UPDATE pilots
-SET compagny='AUS'
-WHERE compagny IS NULL ;
+SELECT * FROM pilots;
+SELECT * FROM compagnies;
+
+
+-- on remet la base de données dans son état initial, si on veut vraiment modifier les tables tapez COMMIT;
+ROLLBACK;
+
+set autocommit = 1;
