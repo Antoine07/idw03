@@ -21,7 +21,6 @@ DELETE FROM compagnies WHERE comp='AUS';
 SELECT * FROM pilots;
 SELECT * FROM compagnies;
 
-
 -- on remet la base de données dans son état initial, si on veut vraiment modifier les tables tapez COMMIT;
 ROLLBACK;
 
