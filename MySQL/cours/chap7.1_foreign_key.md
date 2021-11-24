@@ -93,3 +93,7 @@ CASCADE : modifie également la valeur là où elle est référencée.
 
 Modifiez la clé étrangère dans la table pilots afin que celle-ci possède l'option ON DELETE SET NULL.
 
+Supprimez la compagnie AUS, vérifiez que les pilotes de cette compagnie n'ont plus la référence AUS dans la table pilots.
+
+Puis remettez cette référence en place.
+
