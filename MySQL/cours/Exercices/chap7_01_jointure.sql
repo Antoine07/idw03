@@ -11,7 +11,6 @@ ADD CONSTRAINT `fk_pilots_compagny_compagnies_comp`
 FOREIGN KEY (`compagny`) REFERENCES `compagnies` (`comp`)
 ON DELETE SET NULL;
 
-
 set autocommit = 0;
 
 -- met NULL dans la table pilots
@@ -21,7 +20,6 @@ DELETE FROM compagnies WHERE comp='AUS';
 
 SELECT * FROM pilots;
 SELECT * FROM compagnies;
-
 
 -- on remet la base de données dans son état initial, si on veut vraiment modifier les tables tapez COMMIT;
 ROLLBACK;
