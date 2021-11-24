@@ -35,6 +35,13 @@ Attention pas de FULL OUTER dans MySQL qui permet d'ignorer l'ordre entre les ta
 
 ![jointure left](images/jointure_left.png)
 
+```sql
+SELECT *
+FROM A as t1
+LEFT JOIN B as t2
+ON t1.id = t2.t1_id
+```
+
 Jointure droite
 
 ![jointure right](images/jointure_right.png)
@@ -42,7 +49,7 @@ Jointure droite
 ```sql
 SELECT *
 FROM A as t1
-LEFT JOIN B as t2
+RIGHT JOIN B as t2
 ON t1.id = t2.t1_id
 ```
 
