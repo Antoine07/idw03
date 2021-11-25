@@ -219,6 +219,7 @@ db.authors.find({ $or: [{ name: "Alan" }, { name: "Alice" }] });
 Voici un exemple de condition logique en utilisant OR et AND. Remarquez le deuxième argument de la méthode find, il permet de faire une projection, c'est-à-dire de sélectionner uniquement certaine(s) propriété(s) du document :
 
 ```js
+// Notez que une virgule séparant deux conditions est équivalent à un and
 db.restaurants.find(
   {
     borough: "Brooklyn",
@@ -227,6 +228,11 @@ db.restaurants.find(
   { name: 1, borough: 1 }
 );
 ```
+
+## 01 Exercice
+
+Ré-écrire la requête précédente avec un and et or.
+
 
 Cela correspondrait (...) en SQL à la requête suivante :
 
@@ -239,7 +245,7 @@ WHERE borough = "Brooklyn"
 AND ( `name` LIKE '/^B/' OR `name` LIKE '/^W/')
 ```
 
-## 1. Exercice compter le nombre de restaurants
+## 02 Exercice compter le nombre de restaurants
 
 Sans utiliser la méthode count dans un premier temps comptez le nombre de restaurants dans le quartier de Brooklyn.
 
@@ -259,38 +265,10 @@ while (myCursor.hasNext()) {
 Puis comparez le résultat avec la méthode count :
 
 ```js
-db.collection.findOne(query, restriction).count();
+db.collection.find(query, restriction).count();
 ```
 
-### Correction
-
-```js
-// première version
-const cursor = db.restaurants.find({ borough: "Brooklyn" }, { _id: 1 });
-
-let count = 0;
-while (cursor.hasNext()) {
-  cursor.next();
-  count = count + 1;
-}
-print("next---- une dernière fois");
-// print(cursor.next()); // plus de doc
-print(count);
-
-// deuxième version
-let count = 0;
-function counter(doc) {
-  count += 1;
-  print(doc._id);
-}
-// on peut passer en JS une fonction en paramètre ici forEach de Mongo
-// passera le paramètre doc à la fonction
-db.restaurants.find({ borough: "Brooklyn" }, { _id: 1 }).forEach(counter);
-
-print(count);
-```
-
-### 2. Exercices sur la notion de filtrage
+### 03 Exercices sur la notion de filtrage
 
 Exemple de filtres classiques :
 
