@@ -219,6 +219,7 @@ db.authors.find({ $or: [{ name: "Alan" }, { name: "Alice" }] });
 Voici un exemple de condition logique en utilisant OR et AND. Remarquez le deuxième argument de la méthode find, il permet de faire une projection, c'est-à-dire de sélectionner uniquement certaine(s) propriété(s) du document :
 
 ```js
+// Notez que une virgule séparant deux conditions est équivalent à un and
 db.restaurants.find(
   {
     borough: "Brooklyn",
@@ -227,6 +228,11 @@ db.restaurants.find(
   { name: 1, borough: 1 }
 );
 ```
+
+## 01 Exercice
+
+Ré-écrire la requête précédente avec un and et or.
+
 
 Cela correspondrait (...) en SQL à la requête suivante :
 
