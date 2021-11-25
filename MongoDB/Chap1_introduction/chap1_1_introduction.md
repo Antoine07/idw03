@@ -47,7 +47,8 @@ Ci-dessous un exemple de document :
           "address" : "Paris",
           "grade" : "master 4",
           "notes" : [19, 11, 20],
-          "relationship" : [1]
+          "relationship" : [1],
+          "range" : 10
       }
   ]
 }
