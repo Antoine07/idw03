@@ -38,3 +38,51 @@ FROM `compagnies` as `c`
 JOIN `pilots` as `p` ON `p`.`compagny`  =  `c`.`comp`
 WHERE `c`.`name` = 'Air France'
 AND `p`.`numFlying` > 60;
+
+-- 03 Exercice 
+
+SELECT SUM(p.numFlying) as sum_numFlying
+FROM pilots as p
+JOIN compagnies as c
+ON p.compagny = c.comp
+WHERE c.name = 'AUSTRA Air';
+
+
+-- 04
+
+-- 04 01
+SELECT c.name, p.certificate, p.name 
+FROM compagnies as c 
+RIGHT OUTER JOIN pilots as p 
+ON p.compagny = c.comp ;
+
+-- 04 02
+SELECT c.name, p.certificate, p.name 
+FROM compagnies as c 
+LEFT OUTER JOIN pilots as p 
+ON p.compagny = c.comp
+WHERE p.compagny IS NULL;
+
+-- 05 
+
+-- première version avec un deuxième SELECT sans jointure
+
+SELECT c.name as name_compagny, p.certificate, p.name
+FROM pilots as p
+RIGHT OUTER JOIN compagnies as c
+ON p.compagny = c.comp
+UNION
+SELECT NULL, `certificate`, `name`
+FROM pilots
+WHERE compagny is NULL;
+
+-- Solution avec deux jointures une union
+SELECT c.`name` AS name_compagny, p.certificate AS certificate, p.`name` AS pilot_name
+FROM compagnies AS c
+LEFT OUTER JOIN pilots AS p
+ON c.comp = p.compagny
+UNION
+SELECT c.`name` AS name_compagny, p.certificate AS certificate, p.`name` AS pilot_name
+FROM compagnies AS c
+RIGHT OUTER JOIN pilots AS p
+ON c.comp = p.compagny;
