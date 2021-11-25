@@ -40,6 +40,13 @@ Insérez maintenant le pilote suivant, il ne sera pas rattaché à une compagnie
 
 - Nom : Harry, certificat ct-19. Il n'a aucun leader pilot a fait 0 heure de vol, n'est rattaché à aucune compagnie, a un bonus de 100, a fait 0 jour de travail n'a aucun vol planifié et a pour date de naissance : '2000-01-01 12:00:00'.
 
+```sql
+INSERT INTO `pilots`
+(`certificate`, `name`, `numFlying`, `bonus`, `num_jobs`, `birth_date`)
+VALUES
+('ct-19', 'Harry', 0, 100, 0, '2000-01-01 12:00:00');
+```
+
 - Sélectionnez le nom de la compagnie, le certificat du pilote et le nom du pilote, même si le pilote n'est pas rattaché à une compagnie.
 
 Nous allons maintenant présenter une dernière jointure : la jointure bilatérale. Dans ce cas aucune des deux tables ne jouent le rôle de table dominante.
