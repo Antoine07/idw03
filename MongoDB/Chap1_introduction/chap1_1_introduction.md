@@ -174,7 +174,7 @@ Sur le serveur Mongo :
 show dbs
 
 // Connexion et/ou création d'une base de données restaurants
-use restaurants
+use ny
 
 // Connaitre le nom de la base de données sur laquelle on est connecté
 db
