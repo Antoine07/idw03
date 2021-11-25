@@ -461,30 +461,6 @@ ISODate("2012-10-24T00:00:00Z"); // UTC -2h par rapport à l'heure française
 "bonjour".toUpperCase();
 ```
 
-### Correction exercice 11
-
-```js
-db.restaurants.find({
-    name: /coffee/i,
-    borough: { $in: [/bronx/i, /Brooklyn/i] },
-    grades: { $size: 4 }
-},
-    { "_id": 0, "name": 1, "grades.date": 1, borough: 1 }
-).forEach(
-    doc => {
-        const { name, grades, borough } = doc;
-        print(`Borough: ${borough}`);
-        print();
-        print(name.toUpperCase());
-        grades.slice(0, 1).forEach(({ date }) => {
-            print(`Last date : ${date.toDateString()}`);
-        });
-        grades.slice(-1).forEach(({ date }) => print(`First date ${date.toDateString()}`));
-        print("----------------------------------")
-    }
-);
-```
-
 ## Recherche de restaurents à proximité d'un lieu
 
 MongoDB permet de gérér des points GPS. Dans la collection restaurants nous avons un champ address.coord qui correspond à des coordonnées GPS (longitude & latitude).
