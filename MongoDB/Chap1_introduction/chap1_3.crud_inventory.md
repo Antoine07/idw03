@@ -339,30 +339,8 @@ db.inventory.updateMany({
 
 Ajoutez un champ **scores** de type **array** avec le score 19 pour les entreprises ayant une **qty** supérieure ou égale à 75.
 
-### Correction
-
-```js
-db.inventory.updateMany( {
-    qty : { $gte : 75}
-}, {
-    $set : {  scores : [19]}
-})
-```
 
 Puis mettre à jour les entreprises ayant au moins une lettre a ou A dans leurs noms de société et ajouter leur un score 11 (champ scores).
-
-### Correction
-
-```js
-db.inventory.updateMany(
-    {
-        society : /a/i
-    },
-    {
-        $addToSet : { scores : 11 }
-    }
-)
-```
 
 Question supplémentaire affichez les docs qui ont un score de 11 :
 
@@ -387,27 +365,6 @@ db.inventory.find({
 - Ajoutez une clé **comment** pour les sociétés Alex et ajouter un commentaire : "Hello Alex". Affichez maintenant tous les docs qui n'ont pas la clé comment.
 
 
-## Correction
-
-```js
-db.inventory.updateMany(
-    {
-        society : "Alex"
-    },
-    {
-        $set : { comment : "Hello Alex" },
-        $currentDate: { lastModified: true }
-    }
-)
-
-db.inventory.find(
-    {
-        comment : { $exists :  false }
-    },
-    { society : 1 , _id : 0 }
-)
-```
-
 ## Méthode unset
 
 Vous pouvez également supprimer un champ ou clé d'un document à l'aide de l'opérateur **unset**, ci-dessous on supprime les champs qty et status du premier document qui match avec la recherche :
@@ -424,28 +381,8 @@ db.inventory.updateOne(
 
 Supprimez la propriété level se trouvant dans un/les document(s). Vérifiez qu'il existe au moins un doc qui possède le champ ou la clé level à l'aide d'une requête avant cette action.
 
-### Correction
-
-```js
-db.inventory.find({ level : { $exists : true } }, { society : 1, level : 1 }) 
-```
 
 Vérifiez que le champ **level** n'existe plus après suppression.
-
-### Correction
-
-```js
-db.inventory.updateMany(
-    {
-        level : {
-            $exists : true
-        }
-    },
-    {
-        $unset : { level : ""}
-    }
-);
-```
 
 ## Opérateur switch
 
@@ -483,30 +420,6 @@ Ajoutez la propriété **label** pour les documents ayant la propriété tags un
 - si le nombre de tags est strictement supérieur à 1 : A
 - si le nombre de tags est strictement supérieur à 3 : AA
 - Et B sinon.
-
-### Correction
-
-```js
-db.inventory.updateMany(
-    { tags: { $exists: true } }, // restriction
-    // mise à jour dans des crochets
-    [
-        {
-            $set: {
-                label: {
-                    $switch: {
-                        branches: [
-                            { case: { $gt: [{ $size: "$tags" }, 3] }, then: "AA" },
-                            { case: { $gt: [{ $size: "$tags" }, 1] }, then: "A" },
-                        ],
-                        default: "B"
-                    }
-                }
-            }
-        }
-    ]
-)
-```
 
 ## db.collection.deleteOne
 
@@ -613,19 +526,3 @@ db.inventory.aggregate( [
 ```
 
 ## Exercice calculer la somme des quantités par société
-
-### Correction
-
-```js
-db.inventory.aggregate( [
-  {
-    $group: {
-       _id: "$society", // la clé de regroupement
-       totalQty: { $sum: "$qty" } // un calcul par regroupement
-    }
-  }
-] )
-
-// Pour vérifier faites la requête suivante
-db.inventory.find({ society : "Alex"},{ _id : 0, qty: 1 })
-```

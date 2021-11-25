@@ -357,7 +357,7 @@ Pour utiliser une Regex complexe avec Mongo il faudra utiliser la syntaxe suivan
 
 MongoDB utilise Perl compatible regular expressions (i.e. "PCRE" ) version 8.42 en 2021 avec le support UTF-8.
 
-## Exercice
+## 04 listes d'exercices
 
 1. Combien y a t il de restaurants qui font de la cuisine italienne et qui ont eu un score de 10 au moins ?
    Affichez également le nom, les scores et les coordonnées GPS de ces restaurants. Ordonnez les résultats
@@ -369,29 +369,10 @@ Remarque pour la dernière partie de la question utilisez la méthode sort :
 db.collection.findOne(query, restriction).sort({ key: 1 }); // 1 pour ordre croissant et -1 pour décroissant
 ```
 
-2.1 Quels sont les restaurants qui ont eu un grade A avec un score supérieur ou égal à 20 en même temps ? Affichez uniquement les noms et ordonnez les par ordre décroissant. Affichez le nombre de résultat.
+2. Quels sont les restaurants qui ont eu un grade A avec un score supérieur ou égal à 20 en même temps ? Affichez uniquement les noms et ordonnez les par ordre décroissant. Affichez le nombre de résultat.
 
-### correction 2.1
 
-```js
-db.restaurants
-  .find({
-    grades: {
-      $elemMatch: {
-        score: { $gte: 20 },
-        grade: "A",
-      },
-    },
-  },
-  { _id : 0, name : 1 }
-  )
-  .sort({
-    name: -1,
-  })
-  .pretty();
-```
-
-2.2 Quels sont les restaurants qui ont eu un grade A et un score supérieur ou égal à 20 ? Affichez uniquement les noms et ordonnez les par ordre décroissant. Affichez le nombre de résultat.
+3. Quels sont les restaurants qui ont eu un grade A et un score supérieur ou égal à 20 ? Affichez uniquement les noms et ordonnez les par ordre décroissant. Affichez le nombre de résultat.
 
 ```js
 db.restaurants
@@ -411,69 +392,25 @@ Remarque pour la dernière partie de la question utilisez la méthode count :
 db.collection.findOne(query, restriction).count();
 ```
 
-- 3. A l'aide de la méthode distinct trouvez tous les quartiers distincts de NY.
+4. A l'aide de la méthode distinct trouvez tous les quartiers distincts de NY.
 
 ```js
 db.restaurants.distinct("borough");
 ```
 
-- 4. Trouvez tous les types de restaurants dans le quartiers du Bronx. Vous pouvez là encore utiliser distinct et un deuxième paramètre pour préciser sur quel ensemble vous voulez appliquer cette close :
+5. Trouvez tous les types de restaurants dans le quartiers du Bronx. Vous pouvez là encore utiliser distinct et un deuxième paramètre pour préciser sur quel ensemble vous voulez appliquer cette close :
 
 ```js
 db.restaurants.distinct("field", { key: "value" });
 ```
 
-### correction
+6. Sélectionnez les restaurants dont le grade est A ou B dans le Bronx.
 
-```js
-db.restaurants.distinct("cuisine", { borough: "Bronx" });
-```
-
-- 5. Sélectionnez les restaurants dont le grade est A ou B dans le Bronx.
-
-### Correction
-
-```js
-db.restaurants
-  .find(
-    {
-      $or: [{ "grades.grade": "A" }, { "grades.grade": "B" }],
-      borough: "Bronx",
-    },
-    {
-      name: 1,
-      _id: 0,
-      "grades.grade": 1,
-      borough: 1,
-    }
-  )
-  .pretty();
-```
-
-- 6. Même question mais, on aimerait récupérer les restaurants qui ont eu à la dernière inspection un A ou B. Vous pouvez utilisez la notion d'indice sur la clé grade :
+7. Même question mais, on aimerait récupérer les restaurants qui ont eu à la dernière inspection un A ou B. Vous pouvez utilisez la notion d'indice sur la clé grade :
 
 ```js
 "grades.2.grade";
 
-```
-
-### Correction
-
-```js
-db.restaurants
-  .find(
-    {
-      $or: [{ "grades.0.grade": "A" }, { "grades.0.grade": "B" }],
-      borough: "Bronx",
-    },
-    {
-      name: 1,
-      _id: 0,
-      grades: 1,
-      borough: 1,
-    }
-  )
-  .pretty();
 ```
 
 _Rechercher tous les grades distincts dans la collection._
@@ -504,15 +441,15 @@ db.restaurants.find(
 })
 ```
 
-- 7. Sélectionnez maintenant tous les restaurants qui ont le mot "Coffee" ou "coffee" dans la propriété name du document. Puis, même question mais uniquement dans le quartier du Bronx.
+8. Sélectionnez maintenant tous les restaurants qui ont le mot "Coffee" ou "coffee" dans la propriété name du document. Puis, même question mais uniquement dans le quartier du Bronx.
 
-- 8. Trouvez tous les restaurants avec les mots Coffee ou Restaurant et qui ne contiennent pas le mot Starbucks. Puis, même question mais uniquement dans le quartier du Bronx.
+9. Trouvez tous les restaurants avec les mots Coffee ou Restaurant et qui ne contiennent pas le mot Starbucks. Puis, même question mais uniquement dans le quartier du Bronx.
 
-- 9. Nouvelle question : Trouvez tous les restaurants qui ont dans leur nom le mot clé coffee, qui sont dans le bronx ou dans Brooklyn, qui ont eu exactement 4 appréciations (grades).
+10. Nouvelle question : Trouvez tous les restaurants qui ont dans leur nom le mot clé coffee, qui sont dans le bronx ou dans Brooklyn, qui ont eu exactement 4 appréciations (grades).
 
-- 10. Affichez tous les noms de ces restaurants en majuscule avec leur dernière date et permière date d'évaluation.
+11. Affichez tous les noms de ces restaurants en majuscule avec leur dernière date et permière date d'évaluation.
 
-- 11. Précisez également le quartier dans lequel ce restaurent se trouve.
+12. Précisez également le quartier dans lequel ce restaurent se trouve.
 
 Indications : utilisez les opérateurs suivants :
 
@@ -558,7 +495,7 @@ Nous allons utiliser les coordonnées sphériques de MongoDB. Pour l'implémente
 db.restaurants.createIndex({ "address.coord": "2dsphere" });
 ```
 
-### Exercice GPS
+### 05 Exercice GPS
 
 Après avoir créer l'index 2dsphere ci-dessus, trouvez tous les restaurants qui sont à 5 miles autour du point GPS suivant, donnez leurs noms, leur quartier ainsi que les coordonnées GPS en console, aidez-vous des indications ci-après :
 
@@ -571,20 +508,6 @@ Indications : vous utiliserez la syntaxe suivante avec les opérateurs MongoDB :
 ```js
 // opérateur
 { $nearSphere: { $geometry: { type: "Point", coordinates: coordinate }, $maxDistance: VOTRE_DISTANCE_EN_METRE } }
-```
-
-### Correction 
-
-```js
-const DISTANCE = 5 * 1609.34; // rayon 
-const COORDINATE  = [-73.961704, 40.662942];
-
-db.restaurants.find({
-  "address.coord": { 
-      $nearSphere: { $geometry: { type: "Point", coordinates: COORDINATE }, $maxDistance: DISTANCE } }
-  }
-)
-
 ```
 
 ## Recherche par rapport à la date
@@ -600,7 +523,7 @@ db.restaurants.find(
 );
 ```
 
-## Exercice 
+## 06 Exercice appréciation
 
 Affichez tous les noms  des restaurants qui ont une appréciation (grades) dont toutes les dates sont supérieures à la date suivante:
 
@@ -608,37 +531,10 @@ Affichez tous les noms  des restaurants qui ont une appréciation (grades) dont 
  ISODate("2012-10-24T00:00:00Z")
 ```
 
-### Correction 
 
-```js
- db.restaurants.find(
-    { 
-      "grades.date" : { $gte: ISODate("2012-10-24T00:00:00Z"), $not: { $lt: ISODate("2012-10-24T00:00:00Z") } } 
-    }
-  ,
-  { _id: 0, name: 1, borough: 1, "grades.date": 1 }
-).pretty();
-```
-
-### Exercices supplémentaires
+### 07 Exercices supplémentaires
 
 1. Affichez la liste des restaurants dont le nom commence et se termine par une voyelle.
-
-### Correction
-
-```js
-db.restaurants.find(
-    { name: /^[ aeiouy ].*[ aeiouy ]$/i },
-    {
-        _id: 0,
-        name: 1
-    }
-).forEach(doc => {
-    const { name } = doc;
-    print(`Name : ${name}`);
-    print("----------------------------------");
-});
-```
 
 2. Affichez la liste des restaurants dont le nom commence et se termine par une même lettre. Vous ferez attention à ne pas récupérer dans votre requête les restaurants n'ayant pas de nom. 
 
@@ -650,39 +546,7 @@ Remarque vous pouvez soit programmer cet affichage, soit directement utiliser un
 \2 // permet de récupérer la deuxième chaîne de caractère(s) capturée(s)
 ```
 
-### Correction
-
-```js
-// première correction
-db.restaurants.find(
-    { name: { $nin: [""] } },
-    { name: 1, _id: 0 }
-).forEach(doc => {
-    const { name } = doc;
-    if (name.toLowerCase().substr(0, 1) === name.toLowerCase().substr(-1)) {
-        print(name);
-        print("----------------------------------");
-    }
-})
-
-// deuxième correction
-db.restaurants.find(
-    {
-        name: { $nin: [""] },
-        // regex : commence par une lettre de a à z en minuscule capturé
-        // suivi de n'importe quel caractère(s) (0, infini) et se termine par
-        // ce que les parenthèses ont capturé
-        name: { $regex: /^([a-z]).*\1$/, $options: "i" }
-    },
-    { name: 1, _id: 0 }
-).forEach(doc => {
-    const { name } = doc;
-    print(name);
-    print("----------------------------------");
-});
-```
-
-## Lire un document entièrement résumé
+## Complément pour lire un document entièrement résumé
 
 La méthode find permet de lire les documents dans une collection, par défaut elle ne retournera que 20 documents au maximum.
 
