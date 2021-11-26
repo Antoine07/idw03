@@ -6,7 +6,7 @@ Quel moteur devez-vous définir pour avoir une base de données relationelles
 
 Répondez en choisissant une seule et bonne réponse ci-dessous.
 
-[ ] InnoDB 
+[X] InnoDB 
 
 [ ] MyISAM
 
@@ -24,7 +24,7 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 
 [ ] Il s'applique au type BLOB
 
-[ ] Il s'applique aux types INT
+[X] Il s'applique aux types INT
 
 ## Question 03
 
@@ -34,7 +34,7 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 
 [ ] Data Quest Language
 
-[ ] Data Query Language
+[X] Data Query Language
 
 [ ] Dump Query Language
 
@@ -48,7 +48,7 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 
 [ ] Data More Language
 
-[ ] Data Manipulation Language
+[X] Data Manipulation Language
 
 ## Question 05
 
@@ -60,7 +60,7 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 
 [ ] Data Drive Language
 
-[ ] Data Definition Language
+[X] Data Definition Language
 
 ## Question 06
 
@@ -70,7 +70,7 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 
 [ ] Data Cost Language
 
-[ ] Data Control Language
+[X] Data Control Language
 
 [ ] Data C Language
 
@@ -91,7 +91,7 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 
 [ ] La pourcentage total du nombre d'heures de vol faite par les pilotes.
 
-[ ] La pourcentage du nombre d'heures de vol par pilote.
+[X] La pourcentage du nombre d'heures de vol par pilote.
 
 ## Question 08
 
@@ -108,7 +108,7 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 
 [ ] Il met à jour la table pilote de manière effective, car autocommit est désactivé.
 
-[ ] Il ne met pas à jour la table pilote de manière effective, car autocommit est désactivé.
+[X] Il ne met pas à jour la table pilote de manière effective, car autocommit est désactivé.
 
 [ ] Il lève une erreur car autocommit vaut 0.
 
@@ -133,7 +133,7 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 
 [ ] Nombre de compagnie(s) dont le nombre d'heures de vol est différent de 0.
 
-[ ] Nombre de compagnie(s) dont le nombre d'heures de vol est de moins de 200 heures.
+[X] Nombre de compagnie(s) dont le nombre d'heures de vol est de moins de 200 heures.
 
 
 ## Question 10
@@ -154,7 +154,7 @@ ON c.comp = p.compagny;
 
 Répondez en choisissant une seule et bonne réponse ci-dessous.
 
-[ ] Sélectionne les compagnies et leurs pilotes incluant les compagnies n'ayant pas de pilote et les pilotes n'ayant pas de compagnie.
+[X] Sélectionne les compagnies et leurs pilotes incluant les compagnies n'ayant pas de pilote et les pilotes n'ayant pas de compagnie.
 
 [ ] Sélectionne les compagnies et leurs pilotes n'incluant pas les compagnies n'ayant pas de pilote et les pilotes n'ayant pas de compagnie.
 
