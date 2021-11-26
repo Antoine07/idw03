@@ -2,7 +2,7 @@
 
 ## Exercice nouvelle colonne
 
-1. Ajoutez la colonne salary, salaire annuel, dans la table pilots, définissez son type. Vous donnerez la requête SQL pour modifier la table. Puis faites une requête pour ajouter les salaires respectifs suivants :
+1. Ajoutez la colonne salary, salaire mensuel, dans la table pilots, définissez son type. Vous donnerez la requête SQL pour modifier la table. Puis faites une requête pour ajouter les salaires respectifs suivants :
 
 ```text
 +--------+--------+
