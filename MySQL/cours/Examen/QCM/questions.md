@@ -141,20 +141,21 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 Que fait la requête suivante ?
 
 ```sql
-SELECT COUNT(*) as nb_compagny
-FROM compagnies
-WHERE comp IN (
-    SELECT compagny
-    FROM pilots
-    GROUP BY compagny
-    HAVING  SUM(numFlying) < 200 
-);
+SELECT c.`name` AS name_compagny, p.certificate AS certificate, p.`name` AS pilot_name
+FROM compagnies AS c
+LEFT OUTER JOIN pilots AS p
+ON c.comp = p.compagny
+UNION
+SELECT c.`name` AS name_compagny, p.certificate AS certificate, p.`name` AS pilot_name
+FROM compagnies AS c
+RIGHT OUTER JOIN pilots AS p
+ON c.comp = p.compagny;
 ```
 
 Répondez en choisissant une seule et bonne réponse ci-dessous.
 
-[ ] Le nombre total de compagnie.
+[ ] Sélectionne les compagnies et leurs pilotes incluant les compagnies n'ayant pas de pilote et les pilotes n'ayant pas de compagnie.
 
-[ ] Nombre de compagnie(s) dont le nombre d'heures de vol est différent de 0.
+[ ] Sélectionne les compagnies et leurs pilotes n'incluant pas les compagnies n'ayant pas de pilote et les pilotes n'ayant pas de compagnie.
 
-[ ] Nombre de compagnie(s) dont le nombre d'heures de vol est de moins de 200 heures.
+[ ] Sélectionne les compagnies et leurs pilotes uniquement les compagnie ayant des pilotes.
