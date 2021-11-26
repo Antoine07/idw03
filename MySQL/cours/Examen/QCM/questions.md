@@ -89,9 +89,9 @@ Répondez en choisissant une seule et bonne réponse ci-dessous.
 
 [ ] La somme du nombre d'heures de vol faite par les pilotes.
 
-[X] La pourcentage total du nombre d'heures de vol faite par les pilotes.
+[ ] La pourcentage total du nombre d'heures de vol faite par les pilotes.
 
-[ ] La pourcentage du nombre d'heures de vol par pilote.
+[X] La pourcentage du nombre d'heures de vol par pilote.
 
 ## Question 08
 
